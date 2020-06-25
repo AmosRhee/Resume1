@@ -88,30 +88,89 @@
         <ul class="clearfix">
             <li>
                 <h3>HTML&amp;CSS3</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
             <li>
                 <h3>Javascript</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
             <li>
                 <h3>JQuery</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
             <li>
                 <h3>Vue</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
             <li>
                 <h3>React</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
             <li>
                 <h3>HTTP</h3>
-                <span></span>
+                <div class="outside">
+                    <div class="inside"></div>
+                </div>
             </li>
         </ul>
     </div>
-</section>  
+</section>
+<section class="portfolio">
+    <h2>作品集</h2>
+    <!-- <nav>
+        <ul class="clearfix">
+            <li>所有</li>
+            <li>框架</li>
+            <li>原生JS&amp;CSS</li>
+        </ul>
+        <div class="bar">
+            <div class="bar-inner"></div>
+        </div>
+    </nav> -->
+    <nav class="lead">
+        <p class="">
+            <span id="portfolio1">所有</span>
+            <span id="portfolio2">框架</span>
+            <span id="portfolio3">原生JS&amp;CSS</span>
+        </p>
+        <span id="portfolioout" class="out state-1">
+            <span class="in"></span>
+        </span>
+    </nav>
+    <script>
+        portfolio1.onclick=function(){
+            portfolioout.className = 'out state-1' 
+        }
+        portfolio2.onclick=function(){
+            portfolioout.className = 'out state-2' 
+        }
+        portfolio3.onclick=function(){
+            portfolioout.className = 'out state-3' 
+        }
+    </script>
+    <div class="jobs">
+        <div class="big">
+            <img src="./img/portfol1.jpg" alt="portfolio1">
+        </div>
+        <div class="small">
+            <img src="./img/portfolio2.jpg" alt="portfolio2">
+        </div>
+        <div class="small1">
+            <img src="./img/portfolio3.jpg" alt="portfolio3">
+        </div>
+    </div>
+    
+</section>
+
 </body>
 </html>
