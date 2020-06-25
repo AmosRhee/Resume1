@@ -1,0 +1,163 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{display: block;}
+body{background: #EFEFEF;}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.topbar{
+    padding: 23.8px 118px 23.8px 15px; 
+    position:fixed; width: 100%;box-sizing: border-box;}
+.topbar .logo{float: left;}
+.topbar nav{float: left;}
+
+.topbar .logo span{
+    font-size: 30px;
+    font-family: Arial black;
+    color: #bebebe;
+}
+.topbar .logo span:nth-child(1){
+    color: #6eecde; margin-right: 3px;
+}
+.topbar nav{float: right;}
+.topbar nav ul li{float: left; margin: 0 17px;}
+.topbar nav ul li a{
+    display: block;
+    font-size: 13px; font-weight: bolder;
+    color: #cccccc;
+    padding: 9.8px 0;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.topbar nav ul li a:hover{border-bottom: 3px solid #1bd4af;}
+
+.banner{
+    height: 515px;
+    background: url(../img/7.png);
+    background-size: cover;
+    background-position: center center;
+}
+.banner .background{
+    height: 100%;
+    background: rgba(44, 51, 64, 0.7);
+}
+#main{
+     max-width: 930px; margin: 0 auto; 
+     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.55);
+    margin-top: -350px;
+    }
+.usercard{
+    max-width: 930px;
+    background: #FFFFFF;
+    padding: 57px 50px 30px;
+}
+
+.pic,.text{float: left; padding-right: 15px;}
+.text{width: 471px; padding: 0 0 0 42px;}
+.welcome{margin-bottom: 28px;}
+.text span{
+    display: block;
+    background: #6eecde;
+    font-size: 14px; font-weight: bold; color: white;
+    padding: 5px 11.5px;
+    /* display: block; 解决增加padding后，span超出父元素 */
+    float: left;/*解决变成块元素后，span改变原来尺寸 */ 
+    position: relative;
+    line-height: 19.2px;
+   
+}
+.text span::after{
+    content: "";
+    display:block;
+    border-left: 10px #6eecde solid;
+    border-bottom: 10px transparent solid;
+    position: absolute;
+    top: 29.2px; left: 6px;
+}
+.text p{
+    border-bottom: 1px solid #DEDEDE;
+    padding: 7px 0 25px 0;
+    margin-bottom: 25px;
+}
+.text dl dt,
+.text dl dd{float: left; margin-bottom: 25px; font-size: 15px;}
+.text dl dt{width: 120px; font-weight: bold;}
+.text dl dd{width: 346px; color: #b4b4b4;}
+
+.media{
+    width: 930px; height: 100px; background:#6eecde;
+     text-align: center;}
+.media a{
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 30px 20px 18px;
+    transition: 0.2s;
+}
+.media a:hover{background: rgba(97, 94, 94, 0.1);}
+.media svg{
+    width: 25px; height: 25px; fill:white;
+    vertical-align: top; 
+}
+.button{text-align: center; margin: 25px 0;}
+.button a{
+    display: inline-block;
+    border: 1px solid #CDCFD1;
+    border-radius: 3px;
+    color: black; font-size: 15px; font-weight: bold;
+    padding: 19px 55px;
+    margin: 5px;
+    transition: 0.4s;
+}
+.button a:hover{
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.4);
+}
+.introduction p{
+    text-align: center;
+    font-size: 16px; font-family: kai;
+}
+.introduction p:nth-child(3){margin-top: 15px;}
+
+
+
+h2{text-align: center; margin: 25px 0;}
+
+h3{
+    font-size: 15px; font-weight: normal;
+    margin: 0 0 5px; color: #525863;
+}
+
+ section .skill{ 
+    margin-top: 70px;
+    border: 1px solid red;
+    margin: 0 auto;
+    width: 930px; height: 250px;
+}
+ section .skill ul{
+     padding: 0 35px; margin:42.5px 0 12.5px 0;
+ }
+
+.skill ul li{padding: 0 14px; margin-bottom: 35px;}
+
+.skill ul li span{
+    display: block; background: #FAE1E1; font-size: 14px;
+    
+    height: 5px; width: 400px; border-radius:2.5px;
+    
+}
+
+.skill ul li span::after{
+    content: "";
+    display: block; background-color:#E8676B;
+    width: 75%; height:5px; border-radius: 10px;
+    
+    
+   
+}
+.skill ul li:nth-of-type(odd){float: left;}
+.skill ul li:nth-of-type(even){float: left;}
