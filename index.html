@@ -13,13 +13,28 @@
         <div class="loading"></div>
     </div>
    
-    <div class="topbar clearfix">
+    <div id="topbar" class="topbar clearfix">
         <div class="logo"><span>RS</span><span>card</span></div>
         <nav>
             <ul>
                 <li><a href="#">关于</a></li>
-                <li><a href="#">技巧</a></li>
-                <li><a href="#">博客</a></li>
+                <li><a href="#">技能</a></li>
+                <li>
+                    <a class="menutrigger" href="#">作品</a>
+                    <ul class="submenu">
+                        <li>作品1</li>
+                        <li>作品2</li>
+                        <li>作品3</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="menutrigger" href="#">博客</a>
+                    <ul class="submenu">
+                        <li>博客1</li>
+                        <li>博客2</li>
+                        <li>博客3</li>
+                    </ul>
+                </li>
                 <li><a href="#">日历</a></li>
                 <li><a href="#">联系方式</a></li>
                 <li><a href="#">其他</a></li>
@@ -158,8 +173,30 @@
         <script>
             setTimeout(function(){
                 sitewelcome.classList.remove('active')
-            },2500)
+            },0000)
             
+            window.onscroll = function(xxx){
+                if(window.scrollY > 0){
+                    topbar.classList.add('sticky')
+                }else{
+                   topbar.classList.remove('sticky') 
+                }
+            }
+            let aTages = document.getElementsByClassName('menutrigger')
+            console.log(aTages)
+            for(let i = 0; i < aTages.length; i++){
+                aTages[i].onmouseenter = function(x){
+                    console.log('mouseenter')
+                    let a = x.currentTarget
+                    let brother = a.nextSibling
+                    while(brother.nodeType ===3){
+                        brother = brother.nextSibling
+                    }
+                }
+                aTages[i].onmouseleave = function(x){
+                    console.log('mouseleave')
+                }
+            }
         </script>
     </section>
 </body>
