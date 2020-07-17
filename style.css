@@ -63,23 +63,29 @@ color: #6eecde; margin-right: 3px;}
     padding: 9.8px 0;
     position: relative;
 }
-.topbar nav ul li a:hover::after{
+.topbar nav ul li.active a::after{
     content: '';
     display: block;
     width: 100%; height: 3px; border-radius: 1.5px;
      background: #1bd4af;
      animation: slide 0.3s;
      position: absolute;
-     top: 36px; left: 0;
+     top: 32px; left: 0;
     }
 @keyframes slide{
     0%{width: 0;}
     100%{width: 100%;}
 }
-.topbar .submenu{ font-size: 13px; font-weight: bolder;
-    display: none; position: absolute; left: 0; top: 100%; white-space: nowrap;
+.topbar .submenu{ font-size: 13px; font-weight: bolder; background: white; padding: 10px 0;
+    display: none; position: absolute; right: 0; top:100% ;color: #3D4451;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
-.topbar .submenu.active{display: block;}
+.topbar .submenu li{padding: 5px 15px 5px 20px; white-space: nowrap;}
+.topbar li.active> .submenu{display: block; animation: aaa 0.3s linear;}
+@keyframes aaa{
+    0%{margin-right: 100%; opacity: 0;}
+    100%{margin-right: 0; opacity: 1;}
+}
 .banner{
     height: 515px;
     background: url(https://i.loli.net/2020/07/05/CMm7oPr8KQ63qgZ.png);

@@ -15,12 +15,12 @@
    
     <div id="topbar" class="topbar clearfix">
         <div class="logo"><span>RS</span><span>card</span></div>
-        <nav>
+        <nav class="menu">
             <ul>
                 <li><a href="#">关于</a></li>
                 <li><a href="#">技能</a></li>
-                <li>
-                    <a class="menutrigger" href="#">作品</a>
+                <li >
+                    <a href="#">作品</a>
                     <ul class="submenu">
                         <li>作品1</li>
                         <li>作品2</li>
@@ -28,7 +28,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="menutrigger" href="#">博客</a>
+                    <a href="#">博客</a>
                     <ul class="submenu">
                         <li>博客1</li>
                         <li>博客2</li>
@@ -173,7 +173,7 @@
         <script>
             setTimeout(function(){
                 sitewelcome.classList.remove('active')
-            },0000)
+            },2500)
             
             window.onscroll = function(xxx){
                 if(window.scrollY > 0){
@@ -182,19 +182,16 @@
                    topbar.classList.remove('sticky') 
                 }
             }
-            let aTages = document.getElementsByClassName('menutrigger')
-            console.log(aTages)
-            for(let i = 0; i < aTages.length; i++){
-                aTages[i].onmouseenter = function(x){
-                    console.log('mouseenter')
-                    let a = x.currentTarget
-                    let brother = a.nextSibling
-                    while(brother.nodeType ===3){
-                        brother = brother.nextSibling
-                    }
+            //鼠标进入的时候，我们要a标签显示它的兄弟元素 
+            let liTages = document.querySelectorAll('nav.menu > ul > li')
+            console.log(liTages)
+            for(let i = 0; i < liTages.length; i++){
+                liTages[i].onmouseenter = function(x){
+                    x.currentTarget.classList.add('active')
                 }
-                aTages[i].onmouseleave = function(x){
-                    console.log('mouseleave')
+                
+                liTages[i].onmouseleave = function(x){
+                    x.currentTarget.classList.remove('active')
                 }
             }
         </script>
