@@ -96,7 +96,7 @@ color: #6eecde; margin-right: 3px;}
     height: 100%;
     background: rgba(44, 51, 64, 0.7);
 }
-#main{
+.main{
      max-width: 930px; margin: 0 auto; 
      box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.55);
     margin-top: -350px;
@@ -174,14 +174,8 @@ color: #6eecde; margin-right: 3px;}
 }
 .introduction p:nth-of-type(2){margin-top:15px;}
 
-
-
 h2{text-align: center; margin: 40px 0 15px 0;}
-
-h3{
-    font-size: 15px; font-weight: normal;
-    margin: 0 0 5px; color: #525863;
-}
+h3{font-size: 15px; font-weight: normal; margin: 0 0 5px; color: #525863;}
 
 .skill{
     margin: 0 auto;
@@ -201,7 +195,6 @@ h3{
 .skill ul li:nth-child(1) .inside{width: 80%;}
 .skill ul li:nth-child(2) .inside{width: 75%;}
 .skill ul li:nth-child(3) .inside{width: 90%;}
-
 
 .portfolio{
     max-width: 930px;
@@ -234,20 +227,9 @@ h3{
     border-radius: 2.5px;
     position: absolute; transition: all 0.1s linear;
 }
-.portfolio.out.state-1 .in{
-    width: 15px;
-    left: 0;
-}
-.portfolio .out.state-2 .in{
-    width: 57px;
-    left: 82px;
-}
-.portfolio .out.state-3 .in{
-    width: 101px;
-    left: 183px;
-}
-
-
+.portfolio .out.state-1 .in{width: 15px; left: 0;}
+.portfolio .out.state-2 .in{width: 57px; left: 82px;}
+.portfolio .out.state-3 .in{width: 101px; left: 183px;}
 
 .jobs{height: 576px; margin-top: 40px; position: relative;}
 .big,.small,.small1{

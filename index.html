@@ -17,10 +17,10 @@
         <div class="logo"><span>RS</span><span>card</span></div>
         <nav class="menu">
             <ul>
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
+                <li><a href="#siteAbout">关于</a></li>
+                <li><a href="#siteSkills">技能</a></li>
                 <li >
-                    <a href="#">作品</a>
+                    <a href="#siteWorks">作品</a>
                     <ul class="submenu">
                         <li>作品1</li>
                         <li>作品2</li>
@@ -44,7 +44,7 @@
     <div class="banner">
         <div class="background"></div>
     </div>
-    <main id="main">
+    <main class="main" id="siteAbout">
         <div class="usercard clearfix">
             <div class="pictureandtext">
                 <div class="pic">
@@ -94,7 +94,7 @@
         <div class="button"><a target="_blank" href="#"  download>下载PDF简历</a></div>
         <p>Amos Rhee 前端开发工程师</p>
         <p>技能：前端开发，Node.js开发，Rails开发</p>
-        <h2>专业技能</h2>
+        <h2 id="siteSkills">专业技能</h2>
         <div class="skill clearfix">
             <ul class="clearfix">
                 <li>
@@ -136,7 +136,7 @@
             </ul>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="siteWorks">
         <h2>作品集</h2>
         <nav class="lead">
             <p class="">
@@ -173,7 +173,7 @@
         <script>
             setTimeout(function(){
                 sitewelcome.classList.remove('active')
-            },2500)
+            },1500)
             
             window.onscroll = function(xxx){
                 if(window.scrollY > 0){
@@ -182,7 +182,7 @@
                    topbar.classList.remove('sticky') 
                 }
             }
-            //鼠标进入的时候，我们要a标签显示它的兄弟元素 
+            
             let liTages = document.querySelectorAll('nav.menu > ul > li')
             console.log(liTages)
             for(let i = 0; i < liTages.length; i++){
@@ -193,6 +193,37 @@
                 liTages[i].onmouseleave = function(x){
                     x.currentTarget.classList.remove('active')
                 }
+            }
+
+            let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+            console.log(aTags)
+            for(let i = 0; i < aTags.length; i++){
+                aTags[i].onclick = function(x){
+                    x.preventDefault()//阻止默认事件
+                    let a = x.currentTarget
+                    //a.href 浏览器解析后带有HTTP协议的地址
+                    //a.getAttribute('href')我们填的是什么就是什么
+                    let href = a.getAttribute('href')// '#siteAbout'
+                    let element = document.querySelector(href)//以href为选择器获取目标元素
+                    console.log(element)
+                    let rect = element.getBoundingClientRect()
+                    let top = element.offsetTop //当前元素距离网页顶部的距离
+
+                    let n = 25   //次数
+                    let duration = 500 / n   //时间
+                    let currentTop = window.scrollY //网页顶部距离浏览器窗口的距离
+                    let targetTop = top - 80
+                    let distance = (targetTop - currentTop)/n //每次移动距离
+                    let i = 0
+                    let id = setInterval(function(){
+                        if(i===n){
+                            window.clearInterval(id)
+                            return
+                        }
+                        i = i + 1
+                        window.scrollTo(0,currentTop + distance * i)
+                    },20)    
+               } 
             }
         </script>
     </section>
