@@ -170,6 +170,7 @@
                 <img src="https://i.loli.net/2020/07/05/87wesUpgCNHXMrl.jpg" alt="portfolio3">
             </div>
         </div>
+        <script src="tween.umd.js"></script>
         <script>
             setTimeout(function(){
                 sitewelcome.classList.remove('active')
@@ -196,7 +197,14 @@
             }
 
             let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-            console.log(aTags)
+            //console.log(aTags)
+
+            function animate(time) {
+	            requestAnimationFrame(animate)
+	            TWEEN.update(time)
+            }
+            requestAnimationFrame(animate)
+
             for(let i = 0; i < aTags.length; i++){
                 aTags[i].onclick = function(x){
                     x.preventDefault()//阻止默认事件
@@ -209,20 +217,37 @@
                     let rect = element.getBoundingClientRect()
                     let top = element.offsetTop //当前元素距离网页顶部的距离
 
-                    let n = 25   //次数
-                    let duration = 500 / n   //时间
-                    let currentTop = window.scrollY //网页顶部距离浏览器窗口的距离
+                    let currentTop = window.scrollY
                     let targetTop = top - 80
-                    let distance = (targetTop - currentTop)/n //每次移动距离
-                    let i = 0
-                    let id = setInterval(function(){
-                        if(i===n){
-                            window.clearInterval(id)
-                            return
-                        }
-                        i = i + 1
-                        window.scrollTo(0,currentTop + distance * i)
-                    },20)    
+                    let s = targetTop - currentTop
+                    let t = Math.abs((s/100)*300)
+                    if(t>500){
+                        t = 500
+                    }
+                    let coords = {y: currentTop}
+                    let tween = new TWEEN.Tween(coords) 
+                        .to({y: targetTop}, t) 
+                        .easing(TWEEN.Easing.Quadratic.InOut) 
+                        .onUpdate(() => {
+                            window.scrollTo(0,coords.y)
+                        })
+                        .start() 
+                
+
+                    // let n = 25   //次数
+                    // let duration = 500 / n   //时间
+                    // let currentTop = window.scrollY //网页顶部距离浏览器窗口的距离
+                    // let targetTop = top - 80
+                    // let distance = (targetTop - currentTop)/n //每次移动距离
+                    // let i = 0
+                    // let id = setInterval(function(){
+                    //     if(i===n){
+                    //         window.clearInterval(id)
+                    //         return
+                    //     }
+                    //     i = i + 1
+                    //     window.scrollTo(0,currentTop + distance * i)
+                   // },20)    
                } 
             }
         </script>
